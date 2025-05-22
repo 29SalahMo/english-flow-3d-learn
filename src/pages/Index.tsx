@@ -70,6 +70,13 @@ const Index = () => (
 
     <footer className="text-center py-8 text-gray-400 text-sm">
       &copy; {new Date().getFullYear()} Interactive English with 3D Experience
+      {" · "}
+      <a
+        href="/about-us"
+        className="text-ctaprimary hover:underline story-link ml-1"
+      >
+        About Us
+      </a>
     </footer>
   </main>
 );

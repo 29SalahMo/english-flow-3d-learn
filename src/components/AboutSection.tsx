@@ -37,9 +37,9 @@ const AboutSection = () => (
       ))}
     </svg>
     <div className="relative z-10 max-w-2xl mx-auto text-center">
-      <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-gray-900">About the Course Creator</h2>
+      <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-gray-900">About the Course</h2>
       <p className="text-xl text-gray-800 mb-8">
-        Hello! I’m passionate about helping you unlock the world of English—making learning simple, engaging, and fun. Join my immersive journey where stories, visuals, and discovery make every lesson memorable. 🚀
+        Our English course is designed to make learning simple, engaging, and fun. Experience immersive lessons that combine stories, visuals, and interactive discovery to create memorable learning experiences. Start your journey and transform the way you learn English today!
       </p>
     </div>
   </section>

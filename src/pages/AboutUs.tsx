@@ -1,8 +1,22 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, Whatsapp } from "lucide-react";
+import { Phone } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+
+const GmailIcon = () => (
+  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden>
+    <path d="M3 5.5v13A1.5 1.5 0 0 0 4.5 20h15a1.5 1.5 0 0 0 1.5-1.5v-13A1.5 1.5 0 0 0 19.5 4h-15A1.5 1.5 0 0 0 3 5.5Z" fill="#EA4335"/>
+    <path d="M3 5.5L12 13l9-7.5" stroke="#4285F4" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const WhatsAppIcon = () => (
+  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden>
+    <circle cx="12" cy="12" r="11" fill="#25D366"/>
+    <path d="M17.47 15.43c-.25-.13-1.46-.72-1.68-.81-.23-.09-.39-.13-.55.13-.16.25-.63.81-.77.98-.14.16-.28.18-.53.06-.25-.13-1.05-.38-2-1.2-.73-.65-1.23-1.45-1.37-1.7-.14-.25-.01-.39.12-.52.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.09-.19.05-.36-.02-.49-.07-.13-.55-1.33-.75-1.81-.2-.48-.41-.42-.56-.43-.15-.01-.33-.01-.52-.01-.18 0-.47.07-.71.33-.24.26-.92.89-.92 2.16 0 1.27.94 2.5 1.07 2.67.13.17 1.84 2.94 4.47 4.04.62.25 1.1.4 1.47.48.62.13 1.19.12 1.64.07.5-.06 1.53-.62 1.75-1.23.22-.61.22-1.13.16-1.23-.07-.1-.23-.16-.48-.29Z" fill="#fff"/>
+  </svg>
+);
 
 const AboutUs = () => {
   const navigate = useNavigate();
@@ -32,7 +46,7 @@ const AboutUs = () => {
               className="flex items-center text-blue-300 hover:text-blue-500 transition gap-2 underline"
               target="_blank" rel="noopener noreferrer"
             >
-              <Mail className="w-5 h-5" />
+              <GmailIcon />
               salahmohamed2912002@gmail.com
             </a>
             <a
@@ -40,7 +54,7 @@ const AboutUs = () => {
               className="flex items-center text-green-400 hover:text-green-500 transition gap-2 underline"
               target="_blank" rel="noopener noreferrer"
             >
-              <Whatsapp className="w-5 h-5" />
+              <WhatsAppIcon />
               WhatsApp
             </a>
           </div>

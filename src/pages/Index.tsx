@@ -5,9 +5,17 @@ import ThreeGlobe from "@/components/ThreeGlobe";
 import CourseCard from "@/components/CourseCard";
 import FeedbackSection from "@/components/FeedbackSection";
 import { useState } from "react";
-import InteractiveImage from "@/components/InteractiveImage";
 import FloatingShapes from "@/components/FloatingShapes";
 import ModernHeroButtons from "@/components/ModernHeroButtons";
+import ParallaxScrolling from "@/components/ParallaxScrolling";
+import AnimatedText from "@/components/AnimatedText";
+import CursorTrail from "@/components/CursorTrail";
+import ParticleSystem from "@/components/ParticleSystem";
+import ScrollProgress from "@/components/ScrollProgress";
+import InteractiveBackground from "@/components/InteractiveBackground";
+import LoadingAnimation from "@/components/LoadingAnimation";
+import SoundVisualization from "@/components/SoundVisualization";
+import MorphingShapes from "@/components/MorphingShapes";
 
 const courses = [
   {
@@ -37,19 +45,6 @@ const menus = [
   }
 ];
 
-// Example interactive images for engagement
-const interactiveImages = [
-  {
-    src: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=400&q=80",
-    label: "Interactive Coding",
-    link: "https://www.example.com/demo"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=400&q=80",
-    label: "Live Presentations"
-  }
-];
-
 const Index = () => {
   const [selectedMenu, setSelectedMenu] = useState(0);
 
@@ -58,28 +53,32 @@ const Index = () => {
       <div className="w-full flex min-h-screen">
         <AppSidebar />
         <div className="flex-1 min-h-screen relative overflow-x-hidden bg-gradient-to-br from-[#1C074E] via-[#221156] to-[#1A093B]">
+          <ScrollProgress />
+          <CursorTrail />
+          <ParticleSystem />
           <FloatingShapes />
+          <ParallaxScrolling />
+          <InteractiveBackground />
+          <MorphingShapes />
+          
           {/* HERO With 3D globe and banner */}
-          <section className="relative min-h-[480px] md:min-h-[75vh] flex flex-col items-center justify-center px-3 sm:px-5 z-0">
+          <section className="relative min-h-[480px] md:min-h-[75vh] flex flex-col items-center justify-center px-3 sm:px-5 z-10">
             <ThreeGlobe />
             <div className="z-10 relative text-center mt-16 sm:mt-20 md:mt-32">
               <p className="uppercase tracking-widest text-xs md:text-base font-bold mb-2 text-purple-300">Empower Your Future · Learn Visually · Achieve More</p>
-              <h1 className="text-2xl sm:text-4xl md:text-6xl font-extrabold mb-4 text-white drop-shadow-lg" style={{textShadow:"0 2px 24px #9061F980"}}>
-                English course with a <span className="text-[#D977FA]">free marketing course</span>
-              </h1>
+              <AnimatedText 
+                text="English course with a free marketing course"
+                className="text-2xl sm:text-4xl md:text-6xl font-extrabold mb-4 text-white drop-shadow-lg"
+              />
               <p className="text-base sm:text-lg md:text-2xl mb-8 text-purple-100 md:max-w-2xl mx-auto">
                 Unlock powerful English and in-demand marketing skills through cutting-edge, interactive courses backed by real feedback from learners just like you!
               </p>
-              {/* Modern, interactive hero buttons */}
               <ModernHeroButtons />
             </div>
-            {/* Add interactive images for engagement */}
-            <div className="mt-8 flex flex-col sm:flex-row gap-7 justify-center items-center z-10">
-              {interactiveImages.map(img => (
-                <div key={img.src} className="w-72">
-                  <InteractiveImage {...img} />
-                </div>
-              ))}
+            
+            {/* Sound Visualization */}
+            <div className="mt-8 z-10">
+              <SoundVisualization />
             </div>
           </section>
 
@@ -111,9 +110,10 @@ const Index = () => {
 
           {/* COURSES */}
           <section id="courses" className="container pt-8 pb-12 md:py-24">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-center mb-8 sm:mb-12 text-purple-100 drop-shadow">
-              Choose Your Course
-            </h2>
+            <AnimatedText 
+              text="Choose Your Course"
+              className="text-2xl sm:text-3xl md:text-4xl font-semibold text-center mb-8 sm:mb-12 text-purple-100 drop-shadow"
+            />
             <div className="flex flex-col md:flex-row gap-7 md:gap-8 justify-center items-center">
               {courses.map((c) => (
                 <CourseCard
@@ -123,6 +123,11 @@ const Index = () => {
                   description={c.description}
                 />
               ))}
+            </div>
+            
+            {/* Loading Animation */}
+            <div className="mt-8 flex justify-center">
+              <LoadingAnimation />
             </div>
           </section>
 
@@ -149,4 +154,5 @@ const Index = () => {
     </SidebarProvider>
   );
 };
+
 export default Index;

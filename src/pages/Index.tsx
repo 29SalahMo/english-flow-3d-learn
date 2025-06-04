@@ -1,4 +1,3 @@
-
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
 import ThreeGlobe from "@/components/ThreeGlobe";
@@ -16,6 +15,7 @@ import InteractiveBackground from "@/components/InteractiveBackground";
 import LoadingAnimation from "@/components/LoadingAnimation";
 import SoundVisualization from "@/components/SoundVisualization";
 import MorphingShapes from "@/components/MorphingShapes";
+import { Link } from "react-router-dom";
 
 const courses = [
   {
@@ -138,12 +138,12 @@ const Index = () => {
           <footer className="text-center py-7 text-purple-300 text-xs sm:text-sm mt-2 sm:mt-6">
             &copy; {new Date().getFullYear()} Interactive English & Marketing Courses
             {" · "}
-            <a
-              href="/about-us"
+            <Link
+              to="/about-us"
               className="text-[#D977FA] hover:underline story-link ml-1"
             >
               About Us
-            </a>
+            </Link>
           </footer>
         </div>
       </div>
